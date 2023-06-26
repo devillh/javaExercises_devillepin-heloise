@@ -1,5 +1,6 @@
 package fr.devillepin.myApi.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ public class UserController {
         this.userService = userService;
     }
 
+    @CrossOrigin
     @GetMapping("/user")
     public User getUser(@RequestParam int id) {
         User user = userService.getUser(id);
